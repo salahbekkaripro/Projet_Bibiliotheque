@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+          {%for auteurs in liste_auteurs %}
+          <div class=" col-md-6 col-lg-3 col-xl-3">
+            <div class="card">
+              <a href="{%url  'bioauteurs' auteurs.id %}">
+              </a>
+          <div class="card-body" style="height: 230px;">
+            <h5 class="card-title"><a href="{%url 'bioauteurs' auteurs.id  %}">{{auteurs}}</a></h4>
+              <a href="{%url 'bioauteurs' auteurs.id %}" class="btn btn-primary" data-mdb-ripple-init>accéder à sa Biographie</a>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+{% endblock %}
+    

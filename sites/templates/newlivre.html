@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+<form method="post" class="form">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="category">Genre :</label>
+        <select name="category" id="category" class="form-control">
+            <option value="">Sélectionnez le genre</option>
+            {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="user_input1">Si vous n'avez pas touvé le genre veuillez le taper ici :</label>
+        <input type="text" name="user_input1" id="user_input1" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="user_input2">Titre :</label>
+        <input type="text" name="user_input2" id="user_input2" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="auteeurs">  Auteur:</label>
+        <select name="auteeurs" id="auteeurs" class="form-control">
+            <option value="">Sélectionnez un auteur</option>
+            {% for auteur in auteurs %}
+            <option value="{{ auteur.id }}">{{ auteur.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="user_input3">Si vous n'avez pas touvé l'auteur veuillez le taper ici  :</label>
+        <input type="text" name="user_input3" id="user_input3" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+</form>
+
+<p class="lead">Résultat : {%if result%} {{result }} est ajouté {%endif%}</p>
+
+{% endblock %}

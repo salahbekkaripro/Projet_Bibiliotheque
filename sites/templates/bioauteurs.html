@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="text-center mt-2">Biographie de {{auteur}}</h1>
+        <p>{{desc}}</p>
+        <a href="{%url 'noslivresauteur' auteur.id %}" class="btn btn-primary" data-mdb-ripple-init>Accéder à ses livres</a>      
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>
+  
+{%endblock%}

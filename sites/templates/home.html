@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- Hero Section -->
+    <section class="bg-image" style="background-image: url('https://cdn.paris.fr/paris/2020/03/25/huge-49c1acd4aa28ca2685a3b8793ed22d8b.jpg'); height: 100vh;">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="text-center">
+                        <div class="text-center text-white bg-dark p-2 rounded  w-100">
+                            <h1 class="mb-5">Bienvenue à la BiblioNanterre</h1>
+                        </div>
+                        <h4>
+                            <p class="lead mb-5">Accéder à nos livres </p>
+                            <a href="{%url 'noslivres' %}" class="btn btn-primary" data-mdb-ripple-init>CLiquez ici</a>
+                        </h4>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h2 class="text-center mb-5">Un peu plus !</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Livres par genre</h5>
+                                <a href="{%url 'genre' %}" class="btn btn-primary" data-mdb-ripple-init>CLiquez ici</a>                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Livres triés par auteurs</h5>
+                                <a href="{%url 'auteur' %}" class="btn btn-primary" data-mdb-ripple-init>CLiquez ici</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Vous voulez rajouter un livre ?</h5>
+                                <a href="{%url 'newlivre' %}" class="btn btn-primary" data-mdb-ripple-init>CLiquez ici</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+

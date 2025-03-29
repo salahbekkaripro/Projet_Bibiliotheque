@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <h2>{{livre.title}} écrit par {{livre.auteur}}</h2>
+    <div class="col-md-8">
+      <img src="{{livre.image.url}}" alt="" style="max-width: 600px;">
+      <div>
+      <h2>Résumé :</h2>
+      <p>{{livre.desc}}</p>
+    </div>
+      <div>
+        <p>Recommandations:</p>
+      <p>{{livre.lien}}</p>
+    </div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="mt-2">Livres du même genre :</h3 class="mt-2">
+      <div class="row">
+        {%for liv in ler%}
+        {% if liv.id != livre.id %}
+        <div class="col-md-7 mb-1">
+            <img src="{{liv.image.url}}" alt="" style="max-width: 160px">
+          </div>
+        <div class=" col-5">
+          <strong><a href="{%url 'detail' liv.id %}" class="btn btn-primary" data-mdb-ripple-init>{{liv.title}}</a> </strong><br>
+          {{liv.desc|truncatewords:8}}
+        </div>
+        {%endif%}
+        {%endfor%}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+ {%endblock%}
